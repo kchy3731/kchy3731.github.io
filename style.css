@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    background: #000;
+
+    position: fixed;
+    inset: 0;
+    overscroll-behavior: none;
+    touch-action: none;
+}
+
+::selection {
+    background-color: white;
+    color: black;
+}
+
+:hover {
+    cursor: crosshair;
+}
+
+a:hover, .icon:hover {
+    cursor: pointer;
+}
+
+#gl {
+    display: block;
+    position: absolute;
+    inset: 0;
+    aspect-ratio: 23/6;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    max-height: 100%;
+    height: 100%;
+}
+
+.hero, .copy {
+    overflow: visible;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+.hero h1, .hero h2, .hero h3, .hero h4, .hero h5, .hero h6, .hero p, .hero a,
+.copy h1, .copy h2, .copy h3, .copy h4, .copy h5, .copy h6, .copy p, .copy a {
+    color: white;
+
+    margin: 0;
+    padding: 0;
+
+    mix-blend-mode: difference;
+}
+
+/* hero  */
+.hero h1, .hero h2, .hero h3, .hero h4, .hero h5, .hero h6, .hero p, .hero a {
+    font-family: 'Instrument Serif', 'Aller';
+    font-weight: 400;
+    font-style: normal;
+
+    line-height: 0.75em;
+    letter-spacing: -0.05em;
+}
+
+#name {
+    top: 2.5%;
+}
+
+#name h1 {
+    font-size: clamp(10rem, 23rem, 27vw);
+}
+
+#name h2 {
+    margin-top: 10px;
+    font-size: 7.5em;
+}
+
+#name h3 {
+    margin-top: 15px;
+    font-size: 2.5em;
+}
+
+/* copy */
+.copy h1, .copy h2, .copy h3, .copy h4, .copy h5, .copy h6, .copy p, .copy a {
+    font-family: 'Instrument Serif', 'Helvetica';
+    font-weight: 100;
+    font-size: 2.1em;
+
+    line-height: 0.85em;
+}
+
+#links {
+    top: 60%;
+    left: 52%;
+    transform: rotate(-3deg);
+}
+
+#resume {
+    top: 40%;
+    left: 31%;
+    transform: rotate(5deg);
+}
+
+/* icon */
+.icon {
+    margin: 15px;
+    width: 64px;
+    height: 64px;
+    mix-blend-mode: difference;
+}
+
+/* pointer */
+#pointer {
+    position: absolute;
+    height: 128px;
+    width: 128px;
+    border-radius: 64px;
+    background-color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* daylight */
+#daylight {
+    display: initial;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* scatter */
+[data-scatter] {
+    position: relative;
+}
+
+#scatter-zone {
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    width: 40vw;
+    height: 55vh;
+    /* outline: 1px dashed rgba(255,255,255,0.3);  */
+}
+
+[data-scatter-item] {
+    position: absolute;
+    mix-blend-mode: difference;
+}
+
+@media (max-width: 1200px) {
+    #gl {
+        aspect-ratio: 23 / 6;
+        width: auto;
+        height: 100vh;
+        min-width: 100vw;
+        max-height: none;
+    }
+
+    .hero {
+        position: static;
+        max-width: 100vw;
+        box-sizing: border-box;
+        /* padding: 0 5vw; */
+    }
+
+    #name {
+        margin: 2vh;
+    }
+
+    #scatter-zone {
+        position: absolute;
+        top: 34vh;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 5vw 4vh;
+        overflow: hidden;
+    }
+
+    .copy {
+        box-sizing: border-box;
+    }
+
+    #name h1 {
+        font-size: clamp(3rem, 46rem, 26vw);
+        line-height: 0.75em;
+    }
+
+    #name h2 {
+        font-size: clamp(1.4rem, 12vw, 4rem);
+        margin-top: 0;
+    }
+
+    #name h3 {
+        font-size: clamp(1rem, 4vw, 2rem);
+        margin-top: 0.4em;
+    }
+
+    #pointer {
+        display: none;
+    }
+
+    .copy h1, .copy p, .copy a {
+        font-size: clamp(1.4rem, 6vw, 2.1rem);
+    }
+
+    :hover {
+        cursor: auto;
+    }
+
+    .icon {
+        margin: 10px;
+    }
+}
