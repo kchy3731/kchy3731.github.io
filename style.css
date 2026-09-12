@@ -97,24 +97,42 @@ a:hover, .icon:hover {
     line-height: 0.85em;
 }
 
-#links {
-    top: 60%;
-    left: 52%;
-    transform: rotate(-3deg);
-}
-
-#resume {
-    top: 40%;
-    left: 31%;
-    transform: rotate(5deg);
-}
-
 /* icon */
 .icon {
     margin: 15px;
     width: 64px;
     height: 64px;
     mix-blend-mode: difference;
+}
+
+.arrow {
+    width: auto;
+    height: auto;
+    margin: 0px;
+}
+
+#links {
+    top: 60%;
+    left: 52%;
+}
+
+#hackers {
+    position: absolute;
+    display: flex;
+    align-items:center;
+    top: 80%;
+    left: 60%;
+    transform: rotate(8deg);
+}
+
+#github {
+    transform: rotate(-10deg);
+}
+
+#resume {
+    top: 40%;
+    left: 31%;
+    transform: rotate(5deg);
 }
 
 /* pointer */
